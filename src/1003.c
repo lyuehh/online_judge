@@ -8,7 +8,7 @@ int main(int argc, const char *argv[])
     scanf("%lf", &t);
     while (t != 0) {
         for (i = 2; m < t; i++) {
-            m += 1/(double)i;
+            m += 1 / (double)i;
         }
 
         printf("%d card(s)\n", i - 2);
