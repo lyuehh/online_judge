@@ -19,11 +19,6 @@ int main(int argc, const char *argv[])
     }
 
     for (i=0; i<m; i++) {
-        printf("%s: ", st[i]);
-        printf("%d\n", num[i]);
-    }
-    printf("\n");
-    for (i=0; i<m; i++) {
         k = 0;
         for (j=0; j<m; j++) {
             if (num[k] > num[j]) { // 交换
