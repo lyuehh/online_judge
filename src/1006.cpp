@@ -29,7 +29,7 @@ int main(int argc, const char *argv[])
         while (n <= 0) {
             n += 23 * 28 * 33;
         }
-        cout << "Case " << j << "the next triple peak occurs in " << n << " days." << endl;
+        cout << "Case " << j << ": the next triple peak occurs in " << n << " days." << endl;
     }
     return 0;
 }
