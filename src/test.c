@@ -16,5 +16,7 @@ int main(int argc, const char *argv[])
         mm += 1/(double)j;
     }
     printf("mm: %lf\n", mm);
+
+    int a[2][3] = {{2,3,4}, {1,2,3}};
     return 0;
 }
