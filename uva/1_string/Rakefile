@@ -1,0 +1,28 @@
+
+task :rc do
+    t = ENV['t']
+    fail unless t
+    system "gcc -Wall #{t}.c"
+    system "cat #{t}.in | ./a.out"
+end
+
+task :rcp do
+    t = ENV['t']
+    fail unless t
+    system "g++ -Wall #{t}.cpp"
+    system "cat #{t}.in | ./a.out"
+end
+
+task :new do
+    t = ENV['t']
+    fail unless t
+    system "touch #{t}.in"
+    system "touch #{t}.c"
+    #system "touch #{t}.cpp"
+end
+
+
+
+task :default do
+    puts "t=1003 rake new, t=1003 rake rc"
+end
