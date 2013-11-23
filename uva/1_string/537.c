@@ -21,10 +21,10 @@ int main(int argc, const char *argv[])
                     else if (s[j] == 'm') shu *= 0.001;
                     else if (s[j] == 'k') shu *= 1000;
                     else if (s[j] == 'M') shu *= 1000000;
-                    else if (s[j] == '.') fu = j;
+                    else if (s[j] == '.') fu = j; /* mark the . */
                     else {
                         if (fu == 0) shu = shu*10 + (s[j] - '0');
-                        else shu += (s[j] - '0') * (pow(10, (fu-j)));
+                        else shu += (s[j] - '0') * (pow(10, (fu-j))); /* if has ., then multi it */
                     }
                 }
                 if (s[i] == 'U') U = shu;
@@ -32,7 +32,7 @@ int main(int argc, const char *argv[])
                 else P = shu;
                 if (w == 0) {
                     w = 1;
-                    i = j;
+                    i = j; /* jump over 1, parse 2 */
                 } else {
                     break;
                 }
