@@ -25,9 +25,12 @@ int main(int argc, const char *argv[])
         for (i=lb-1; i>=0; i--) {
             ib[j++] = b[i] - '0';
         }
+        /* printf("a: %s, b: %s\n", a, b); */
         for (i=0; i<la; i++) {
             for (j=0; j<lb; j++) {
                 ret[i+j] += ia[i] * ib[j];
+                /* printf("a[%d]: %d, b[%d]: %d ", i, ia[i], j, ib[j]); */
+                /* printf("ret[%d]: %d\n", i+j, ret[i+j]); */
             }
         }
         for (i=0; i<N*2+1; i++) {
