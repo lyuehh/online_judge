@@ -23,7 +23,7 @@ int main(int argc, const char *argv[])
         if (isalpha(ch)) {
             d[n][len++] = tolower(ch);
         } else if (isalpha(d[n][0])) {
-        /* } else { */
+            /* } else { */
             d[n++][len] = '\0';
             len = 0;
         }

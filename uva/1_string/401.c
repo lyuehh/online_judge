@@ -24,7 +24,7 @@ int main(int argc, const char *argv[])
             if (isalpha(s[n-1-i]) && (s[i]!=s1[s[n-i-1]-'A'])) {
                 mir = 0;
                 break;
-            /* } else if (isdigit(s[i]) && (s[n-i-1]!=s2[s[i]-'1'])) { */
+                /* } else if (isdigit(s[i]) && (s[n-i-1]!=s2[s[i]-'1'])) { */
             } else if (isdigit(s[n-i-1]) && (s[i]!=s2[s[n-1-i]-'1'])) {
                 mir = 0;
                 break;
