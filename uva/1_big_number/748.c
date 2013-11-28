@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-const int maxn = 300;
+const int maxn = 500;
 
 void Mul(char *str1, char *str2, char *str3){
     int  i, j, i1, i2, tmp, carry, jj;
@@ -44,6 +44,7 @@ int main() {
     int n;
     while (1) {
         int p, tmp, i = 0;
+        int j;
         while ((tmp = getchar()) != EOF && tmp != ' ')
             if (tmp == '.') {
                 p = i;
@@ -51,7 +52,7 @@ int main() {
                 t[i]= num[i] = tmp;
                 i++;
             }
-        for (int j = i - 1; j >= 0; j--) {
+        for (j = i - 1; j >= 0; j--) {
             if (num[j] != '0') {
                 i = j + 1;
                 break;
@@ -64,13 +65,10 @@ int main() {
         p = (strlen(num) - p) * n;
         getchar();
         memset(res, '0', sizeof(res));
-        for (int i = 0; i < n - 1; i++) {
+        for (i = 0; i < n - 1; i++) {
             Mul(num, t, res);
-            //  if (i == n - 1)
-            //      printf("%s %s %s\n", num, t, res);
-            //printf("hehe\n%s\n", res);
             if (i != n - 2) {
-                for (int j = 0; j < maxn; j++) {
+                for (j = 0; j < maxn; j++) {
                     t[j] = res[j];
                     res[j] = '0';
                 }
@@ -78,12 +76,11 @@ int main() {
         }
         if (p >= strlen(res)) {
             printf(".");
-            for (int i = 0; i < p - strlen(res); i++) {
+            for (i = 0; i < p - strlen(res); i++) {
                 printf("0");
             }
             printf("%s\n", res);
         } else {
-            int i;
             for (i = 0; i < strlen(res) - p; i++) {
                 printf("%c", res[i]);
             }
