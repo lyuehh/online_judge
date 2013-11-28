@@ -3,18 +3,18 @@
 
 const int maxn = 500;
 
-void Mul(char *str1, char *str2, char *str3){
+void Mul(char *str1, char *str2, char *str3) {
     int  i, j, i1, i2, tmp, carry, jj;
     int  len1 = strlen(str1), len2 = strlen(str2);
     char  ch;
 
     jj = carry = 0;
 
-    for (i1=len1-1; i1 >= 0; --i1){
+    for (i1=len1-1; i1 >= 0; --i1) {
         j = jj;
-        for (i2=len2-1; i2 >= 0; --i2, ++j){
+        for (i2=len2-1; i2 >= 0; --i2, ++j) {
             tmp = (str3[j]-'0')+(str1[i1]-'0')*(str2[i2]-'0')+carry;
-            if (tmp > 9){
+            if (tmp > 9) {
                 carry = tmp/10;
                 str3[j] = tmp%10+'0';
             } else {
@@ -32,7 +32,7 @@ void Mul(char *str1, char *str2, char *str3){
     --j;
     while (str3[j] == '0' && j > 0) --j;
     str3[++j] = '\0';
-    for (i=0, --j; i < j; ++i, --j){
+    for (i=0, --j; i < j; ++i, --j) {
         ch = str3[i];
         str3[i] = str3[j];
         str3[j] = ch;
